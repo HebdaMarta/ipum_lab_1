@@ -1,8 +1,8 @@
 import argparse
-from dotenv import load_dotenv
 from settings import Settings
 import yaml
 import os
+from dotenv import load_dotenv
 
 
 def load_secrets(path: str = "secrets.yaml") -> None:
