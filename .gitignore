@@ -209,3 +209,4 @@ __marimo__/
 
 #secrets
 public_key.asc
+secrets.yaml

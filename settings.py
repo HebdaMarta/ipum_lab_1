@@ -7,13 +7,13 @@ class Settings(BaseSettings):
     ENVIRONMENT: str
     APP_NAME: str
 
+    API_KEY: str
+    DATABASE_PASSWORD: str
+    TOKEN: str
+
     @field_validator("ENVIRONMENT")
     @classmethod
     def validate_environment(cls, value):
-        value = value.lower()
-        allowed = {"dev", "test", "prod"}
-
-        if value not in allowed:
-            raise ValueError(f"ENVIRONMENT must be one of {allowed}, got '{value}'")
-
+        if value not in {"dev", "test", "prod"}:
+            raise ValueError("ENVIRONMENT must be one of: dev, test, prod")
         return value
